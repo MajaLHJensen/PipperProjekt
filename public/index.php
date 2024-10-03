@@ -23,10 +23,7 @@
     if ($requestMethod == "GET" && $uri[1] == "pipper") {
         try {
             $statement = $conn->query("SELECT * FROM Pipper");
-            // $sql = "SELECT * FROM cats";
-            // $statement = $conn->prepare($sql);
-            // $statement->execute(array('name' => $name));
-            
+             
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             echo json_encode($result);
