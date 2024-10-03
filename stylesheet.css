@@ -8,7 +8,7 @@
 .sideBar{
     display: flex;
     flex-direction: column;
-    background-color: #1e1f22;
+    /* background-color: #1e1f22; */
     position: absolute;
     height: 52em;
     width: 15%;
@@ -217,6 +217,16 @@
   }
   .bottom button:hover{
     background: #0d8bd9;
+  }
+
+  #pipperForm{
+    position: absolute;
+    z-index: 2;
+  }
+
+  #show{
+    color: #1e1f22;
+    position: absolute;
   }
   
 

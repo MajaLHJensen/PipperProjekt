@@ -51,3 +51,34 @@ function myModalMeddelelser() {
     x.className = "wrapperMeddelelser";
   }
 }
+
+// C indsæt
+document.getElementById("pipperForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const Brugernavn = document.getElementById("Brugernavn").value;
+  const Besked = document.getElementById("Besked").value;
+  const Dato = document.getElementById("Dato").value;
+  
+  const data = {
+      Brugernavn: Brugernavn,
+      Besked: Besked,
+      Dato: new Date().toISOString().slice(0,19)
+  };
+console.log(data);
+
+  const url = "http://localhost:8000/pipper";
+  const options = {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+  };
+  
+  const response = await fetch(url, options)
+  const pipper = await response.json();
+  
+  console.log(pipper);
+  console.log("yayy det virker!");
+})

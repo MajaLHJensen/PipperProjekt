@@ -9,6 +9,8 @@
     <!-- Link til fontawesome -->
     <script src="https://kit.fontawesome.com/d159f481dd.js" crossorigin="anonymous"></script>
 
+    
+
 </head>
 <body>
     <div class="sideBar">
@@ -47,6 +49,36 @@
           </div>
         </div>
       </div>
-      <script src="script.js"></script>
+
+  <p>This is a standard HTML page.</p>
+  <form id="pipperForm">
+    <label for="Brugernavn">Brugernavn:</label>
+    <input type="text" id="Brugernavn" name="Brugernavn">
+
+    <label for="Besked">Besked:</label>
+    <input type="text" id="Besked" name="Besked">
+
+    <label for="Dato">Dato:</label>
+    <input type="text" id="Dato" name="Dato">
+
+    <button id="btnSubmit" type="submit">Submit</button>
+    <h1 id="show"></h1>
+  </form>
+
+      <script src="script.js">
+
+const form = document.getElementById("pipperForm");
+  const results = document.getElementById("Brugernavn"); 
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form from refreshing the page
+    Display();
+  });
+
+  function Display() {
+    let text = results.value;
+    document.getElementById("show").innerHTML = text;
+  }
+      </script>
 </body>
 </html>
