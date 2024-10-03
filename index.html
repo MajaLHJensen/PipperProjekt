@@ -33,52 +33,52 @@
             <input type="text" placeholder="Søg" class="search">
         </div>
     </div>
-        <div class="wrapper">
-        
-        <div class="input-box">
+    <div class="wrapper">
+      <div class="input-box">
+        <form id="pipperForm">
           <div class="tweet-area">
-            <span class="placeholder">Hvad har du på hjertet?</span>
-            <div class="input editable" contenteditable="true" spellcheck="false"></div>
-            <div class="input readonly" contenteditable="true" spellcheck="false"></div>
+            <label for="Brugernavn">Brugernavn:</label>
+            <input type="text" id="Brugernavn" name="Brugernavn">
+  
+            <label for="Besked">Besked:</label>
+            <!-- Max length of 255 characters for this input field -->
+            <input type="text" id="Besked" name="Besked" spellcheck="false" maxlength="255">
+            <div class="counter" id="counter">Characters: 0/255</div>
+  
+            <label for="Dato">Dato:</label>
+            <input type="text" id="Dato" name="Dato">
+  
+            <button id="btnSubmit" type="submit">Submit</button>
+            <h1 id="show"></h1>
           </div>
-        </div>
-        <div class="bottom">
-          <div class="content">
-            <span class="counter">100</span>
-            <button>Post</button>
-          </div>
-        </div>
+        </form>
       </div>
+    </div>
 
-  <p>This is a standard HTML page.</p>
-  <form id="pipperForm">
-    <label for="Brugernavn">Brugernavn:</label>
-    <input type="text" id="Brugernavn" name="Brugernavn">
+    <script>
+      const beskedInput = document.getElementById('Besked');
+      const counter = document.getElementById('counter');
+      const maxLength = 255;
+  
+      // Update character count as the user types and enforce the limit
+      beskedInput.addEventListener('input', function() {
+        let characterCount = beskedInput.value.length;
+  
+        // Update the counter display
+        counter.textContent = 'Characters: ' + characterCount + '/' + maxLength;
+  
+        // Highlight the counter in red if the limit is reached
+        if (characterCount >= maxLength) {
+          counter.classList.add('over-limit');
+        } else {
+          counter.classList.remove('over-limit');
+        }
+      });
+    </script>
+  
 
-    <label for="Besked">Besked:</label>
-    <input type="text" id="Besked" name="Besked">
 
-    <label for="Dato">Dato:</label>
-    <input type="text" id="Dato" name="Dato">
-
-    <button id="btnSubmit" type="submit">Submit</button>
-    <h1 id="show"></h1>
-  </form>
-
-      <script src="script.js">
-
-const form = document.getElementById("pipperForm");
-  const results = document.getElementById("Brugernavn"); 
-
-  form.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form from refreshing the page
-    Display();
-  });
-
-  function Display() {
-    let text = results.value;
-    document.getElementById("show").innerHTML = text;
-  }
-      </script>
+      <script src="script.js"></script>   
 </body>
 </html>
+

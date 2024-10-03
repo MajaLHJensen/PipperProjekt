@@ -82,3 +82,5 @@ console.log(data);
   console.log(pipper);
   console.log("yayy det virker!");
 })
+
+
