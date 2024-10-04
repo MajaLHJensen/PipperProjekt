@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="dove.jpg">
     <title>Pipper</title>
     <link rel="stylesheet" href="stylesheet.css">
 
@@ -13,6 +15,7 @@
 
 </head>
 <body>
+  <div id="container">
     <div class="sideBar">
         <i class="fa-solid fa-dove"></i>
         <a href="index.html">Forside</a>
@@ -39,22 +42,33 @@
           <div class="tweet-area">
             <label for="Brugernavn">Brugernavn:</label>
             <input type="text" id="Brugernavn" name="Brugernavn">
-  
+            
             <label for="Besked">Besked:</label>
+      
             <!-- Max length of 255 characters for this input field -->
             <input type="text" id="Besked" name="Besked" spellcheck="false" maxlength="255">
+            
             <div class="counter" id="counter">Characters: 0/255</div>
-  
-            <label for="Dato">Dato:</label>
-            <input type="text" id="Dato" name="Dato">
-  
-            <button id="btnSubmit" type="submit">Submit</button>
-            <h1 id="show"></h1>
+            <p>Choose your avatar:</p>
+            <div class="avatar">
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Caleb" alt="avatar" />
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Chase" alt="avatar" />
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Easton"alt="avatar" />
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Mackenzie"alt="avatar" />
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Aidan"alt="avatar" />
+            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Amaya"alt="avatar" />
           </div>
+            <button id="btnSubmit" type="submit">Post</button>
+          
+           
+           </div>
         </form>
       </div>
-    </div>
 
+    </div>
+    <div id="pipperResult">
+    </div>
+    </div>
     <script>
       const beskedInput = document.getElementById('Besked');
       const counter = document.getElementById('counter');

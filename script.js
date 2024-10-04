@@ -1,39 +1,39 @@
-const wrapper = document.querySelector(".wrapper"),
-editableInput = wrapper.querySelector(".editable"),
-readonlyInput = wrapper.querySelector(".readonly"),
-placeholder = wrapper.querySelector(".placeholder"),
-counter = wrapper.querySelector(".counter"),
-button = wrapper.querySelector("button");
-editableInput.onfocus = ()=>{
-  placeholder.style.color = "#c5ccd3";
-}
-editableInput.onblur = ()=>{
-  placeholder.style.color = "#98a5b1";
-}
-editableInput.onkeyup = (e)=>{
-  let element = e.target;
-  validated(element);
-}
-editableInput.onkeypress = (e)=>{
-  let element = e.target;
-  validated(element);
-  placeholder.style.display = "none";
-}
-function validated(element){
-  let text;
-  let maxLength = 255;
-  let currentlength = element.innerText.length;
-  if(currentlength <= 0){
-    placeholder.style.display = "block";
-    counter.style.display = "none";
-    button.classList.remove("active");
-  }else{
-    placeholder.style.display = "none";
-    counter.style.display = "block";
-    button.classList.add("active");
-  }
-  counter.innerText = maxLength - currentlength;
-}
+// const wrapper = document.querySelector(".wrapper")
+// const editableInput = wrapper.querySelector(".editable")
+// const readonlyInput = wrapper.querySelector(".readonly")
+// const placeholder = wrapper.querySelector(".placeholder")
+// const counter2 = wrapper.querySelector(".counter")
+// const button = wrapper.querySelector("button")
+// editableInput.onfocus = ()=>{
+//   placeholder.style.color = "#c5ccd3";
+// }
+// editableInput.onblur = ()=>{
+//   placeholder.style.color = "#98a5b1";
+// }
+// editableInput.onkeyup = (e)=>{
+//   let element = e.target;
+//   validated(element);
+// }
+// editableInput.onkeypress = (e)=>{
+//   let element = e.target;
+//   validated(element);
+//   placeholder.style.display = "none";
+// }
+// function validated(element){
+//   let text;
+//   let maxLength = 255;
+//   let currentlength = element.innerText.length;
+//   if(currentlength <= 0){
+//     placeholder.style.display = "block";
+//     counter2.style.display = "none";
+//     button.classList.remove("active");
+//   }else{
+//     placeholder.style.display = "none";
+//     counter2.style.display = "block";
+//     button.classList.add("active");
+//   }
+//   counter2.innerText = maxLength - currentlength;
+// }
 
 function myModalProfil() {
   var x = document.getElementById("myWrapperProfil");
@@ -53,6 +53,7 @@ function myModalMeddelelser() {
 }
 
 // C indsæt
+
 document.getElementById("pipperForm").addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -65,7 +66,8 @@ document.getElementById("pipperForm").addEventListener("submit", async (event) =
       Besked: Besked,
       Dato: new Date().toISOString().slice(0,19)
   };
-console.log(data);
+
+  console.log(data);
 
   const url = "http://localhost:8000/pipper";
   const options = {
@@ -82,5 +84,27 @@ console.log(data);
   console.log(pipper);
   console.log("yayy det virker!");
 })
+window.addEventListener("load", async (event) => {
+  const url = "http://localhost:8000/pipper";
+const  response = await fetch(url)
+const pips = await response.json();
+console.log(pips)
 
+// Get the element where you want to display the pips object
+  const displayElement = document.getElementById("pipperResult");
+ 
+  // Convert the pips object to a string and display it
+  displayElement.innerText = JSON.stringify(pips);
+ 
+  // Create seperate html classes for Brugernavn and Besked
+  const htmlPipList = pips.map(pip => {
+    return `
+    <div class="pip">
+      <p class="brugernavn">Brugernavn:${pip.Brugernavn}</p>
+      <p class="besked">${pip.Besked}</p>
+    </div>
+    `
+  }).join("");
+  displayElement.innerHTML = htmlPipList;
+});
 
