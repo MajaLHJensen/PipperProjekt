@@ -24,7 +24,7 @@
   float: left;
   position: relative;
   left: 25%;
-  font-size: 20px;
+  font-size: 24px;
   margin: 10px;
   border: none;
   background: none;
@@ -55,7 +55,8 @@
   position: absolute;
   right: 0;
   height: 52em;
-  width: 15%;
+  width: fit-content;
+  padding: 10px;
 }
 
 .searchSection{
@@ -66,14 +67,14 @@
 }
 
 .search{
-  font-size: 18px;
+  font-size: 24px;
   padding: 5px;
   border-radius: 0.8em;
   border: none;
 }
 
 .sideBar button{
-  font-size: 20px;
+  font-size: 24px;
   margin: 5px;
   color: white;
   background-color: rgb(65, 139, 188);
@@ -148,8 +149,24 @@ background: #fff;
   display: grid;
 }
 
+#Brugernavn{
+ grid-row:2/4;
+ height: 50%;
+ align-self: center;
+ border: none;
+}
 #Brugernavn, #Besked{
   font-size: 24px;
+}
+.profil{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.profil p{
+  grid-column: 1/5;
+  grid-row: 1/2;
+  
 }
 .avatar{
   display: flex;
@@ -158,6 +175,8 @@ background: #fff;
   background: black;
   border-radius: 11em;
   margin: 10px 0;
+  grid-row: 2/4;
+  position: relative;
 }
 .avatar:hover{
 width: fit-content;
@@ -205,7 +224,24 @@ width: fit-content;
   align-items: center;
   justify-content: space-between;
 }
-
+.Caleb:hover{
+background-color: rgb(65, 139, 188);
+}
+.Chase:hover{
+background-color: rgb(65, 139, 188);
+}
+.Easton:hover{
+background-color: rgb(65, 139, 188);
+}
+.Mackenzie:hover{
+background-color: rgb(65, 139, 188);
+}
+.Aidan:hover{
+background-color: rgb(65, 139, 188);
+}
+.Amaya:hover{
+background-color: rgb(65, 139, 188);
+}
 .bottom .content{
   display: flex;
   align-items: center;
@@ -240,29 +276,27 @@ width: fit-content;
   background: #0d8bd9;
 }
 #btnSubmit{
-  padding: 9px 18px;
-  border: none;
-  outline: none;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: 700;
-  background: #1da1f2;
-  color: #fff;
-  cursor: pointer;
-  pointer-events: none;
-  transition: background 0.2s ease;
+
+  border-radius: 0.5em;
+  font-size: 24px;
   width: 100px;
+  padding: 6px 24px;
+ 
+  background: #418BBC;
+  color: white;
+  border: none;
+
 }
-.bottom button.active{
+#btnSubmit:active{
   opacity: 1;
   pointer-events: auto;
 }
-.bottom button:hover{
+#btnSubmit:hover{
   background: #0d8bd9;
 }
 .counter {
   text-align: right;
-  color: #888;
+  color: #888;  
   font-size: 14px;
   margin-bottom: 10px;
 }
@@ -270,7 +304,7 @@ width: fit-content;
 #pipperResult{
   position: absolute;
   left: 500px;
-  top: 250px;
+  top: 425px;
   width: 700px;
  }
  .pip{

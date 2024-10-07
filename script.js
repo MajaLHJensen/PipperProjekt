@@ -1,39 +1,4 @@
-// const wrapper = document.querySelector(".wrapper")
-// const editableInput = wrapper.querySelector(".editable")
-// const readonlyInput = wrapper.querySelector(".readonly")
-// const placeholder = wrapper.querySelector(".placeholder")
-// const counter2 = wrapper.querySelector(".counter")
-// const button = wrapper.querySelector("button")
-// editableInput.onfocus = ()=>{
-//   placeholder.style.color = "#c5ccd3";
-// }
-// editableInput.onblur = ()=>{
-//   placeholder.style.color = "#98a5b1";
-// }
-// editableInput.onkeyup = (e)=>{
-//   let element = e.target;
-//   validated(element);
-// }
-// editableInput.onkeypress = (e)=>{
-//   let element = e.target;
-//   validated(element);
-//   placeholder.style.display = "none";
-// }
-// function validated(element){
-//   let text;
-//   let maxLength = 255;
-//   let currentlength = element.innerText.length;
-//   if(currentlength <= 0){
-//     placeholder.style.display = "block";
-//     counter2.style.display = "none";
-//     button.classList.remove("active");
-//   }else{
-//     placeholder.style.display = "none";
-//     counter2.style.display = "block";
-//     button.classList.add("active");
-//   }
-//   counter2.innerText = maxLength - currentlength;
-// }
+<button id="btnSubmit" onClick="window.location.reload();">Refresh Page</button>
 
 function myModalProfil() {
   var x = document.getElementById("myWrapperProfil");
@@ -59,7 +24,7 @@ document.getElementById("pipperForm").addEventListener("submit", async (event) =
 
   const Brugernavn = document.getElementById("Brugernavn").value;
   const Besked = document.getElementById("Besked").value;
-  const Dato = document.getElementById("Dato").value;
+  
   
   const data = {
       Brugernavn: Brugernavn,

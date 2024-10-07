@@ -3,96 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="shortcut icon" href="dove.jpg">
-    <title>Pipper</title>
-    <link rel="stylesheet" href="stylesheet.css">
-
-    <!-- Link til fontawesome -->
-    <script src="https://kit.fontawesome.com/d159f481dd.js" crossorigin="anonymous"></script>
-
-    
-
+    <link rel="stylesheet" href="https://use.typekit.net/jzx3hao.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://use.typekit.net/jzx3hao.css">
+    <link rel="stylesheet" href="style/style.css">
+   
+    <title>SophiaAnina</title>
 </head>
 <body>
-  <div id="container">
-    <div class="sideBar">
-        <i class="fa-solid fa-dove"></i>
-        <a href="index.html">Forside</a>
-        <a href="meddelser.html">Meddelelser</a>
-        <a href="profil.html"> Profil</a>
 
-        <button><a class="post" href="">Post</a></button>
-    
-        <div class="circle">
-            <p>Profil</p>
-        </div>
-    </div>
-
-    <div class="feed"></div>
-
-    <div class="searchBar">
-        <div class="searchSection">
-            <input type="text" placeholder="Søg" class="search">
-        </div>
-    </div>
-    <div class="wrapper">
-      <div class="input-box">
-        <form id="pipperForm">
-          <div class="tweet-area">
-            <label for="Brugernavn">Brugernavn:</label>
-            <input type="text" id="Brugernavn" name="Brugernavn">
-            
-            <label for="Besked">Besked:</label>
+      <div class="navbar">          
+        <div class="title">
       
-            <!-- Max length of 255 characters for this input field -->
-            <input type="text" id="Besked" name="Besked" spellcheck="false" maxlength="255">
-            
-            <div class="counter" id="counter">Characters: 0/255</div>
-            <p>Choose your avatar:</p>
-            <div class="avatar">
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Caleb" alt="avatar" />
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Chase" alt="avatar" />
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Easton"alt="avatar" />
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Mackenzie"alt="avatar" />
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Aidan"alt="avatar" />
-            <img src="https://api.dicebear.com/9.x/croodles/svg?seed=Amaya"alt="avatar" />
-          </div>
-            <button id="btnSubmit" type="submit">Post</button>
+          <a href="indeks.html">SophiaAnina</a>
           
-           
-           </div>
-        </form>
+        </div>
+    
+        <div class="topnav" id="myNavbar">
+          <a href="indeks.html" class="link">Home</a>
+          <div class="dropdown">
+              <a class="link-portfolio" href="portfolio.html"> Portfolio </a>
+              
+              <div class="dropdown-content">
+                <div class="web">
+                  <a href="">Frontend <i class="bi bi-caret-right-fill"></i></a>
+                  <div class="web-content">
+                    <a href="wordpress.html">Wordpress & SEO</a>
+                    <a href="bootstrap.html">Webdevelopment</a>
+                    
+                  </div>
+                </div>
+                <div class="design">
+                  <a href="">UX/UI <i class="bi bi-caret-right-fill"></i></a>
+                  <div class="design-content">
+                    <a href="Billedbehandling.html">Digital Image-Editing</a>
+                    <a href="kampagne.html">Campaign & InDesign</a>
+                  </div>
+                </div>
+                <div class="video">
+                  <a href="">Content Creation <i class="bi bi-caret-right-fill"></i></a>
+                  <div class="video-content">
+                    <a href="medieproduktion.html">Educational Promotionvideo</a>
+                    <a href="visuel.html">Visual Conceptdevelopment</a>
+                  </div>
+                </div>
+                <div class="illu">
+                  <a href="">Independent Projects <i class="bi bi-caret-right-fill"></i></a>
+                  <div class="illu-content">
+                  <a href="frontend.html">Kort&Godt</a>
+                  <a href="Frontend-libary.html">Frontend Libary</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <a href="javascript:void(0);" class="icon-ned" onclick="myResponsiveNed()">
+            Portfolio<i class="fa-solid fa-chevron-down"></i></a>  
+          
+          <div class="dropdown-content-mobil" id="myDropdown">
+            <div class="web-mobil">
+              <a href="javascript:void(0);" class="icon-ned" onclick="myWeb()">
+                Web<i class="fa-solid fa-chevron-down"></i></a>
+              <div class="web-content-mobil" id="myWeb">
+                <a href="wordpress.html">Wordpress & SEO</a>
+                <a href="bootstrap.html">Webdevelopment</a>
+                
+              </div>
+            </div>
+            <div class="design-mobil">
+              <a href="javascript:void(0);" class="icon-ned" onclick="myDesign()">
+                Design<i class="fa-solid fa-chevron-down"></i></a>
+              <div class="design-content-mobil" id="myDesign">
+                <a href="Billedbehandling.html">Digital Image-Editing</a>
+                <a href="kampagne.html">Campaign & InDesign</a>
+              </div>
+            </div>
+            <div class="video-mobil">
+              <a href="javascript:void(0);" class="icon-ned" onclick="myVideo()">
+                Video<i class="fa-solid fa-chevron-down"></i></a>
+              <div class="video-content-mobil" id="myVideo">
+                <a href="medieproduktion.html">Educational Promotionvideo</a>
+                <a href="visuel.html">Visual Conceptdevelopment</a>
+              </div>
+            </div>
+            <div class="illu-mobil">
+              <a href="javascript:void(0);" class="icon-ned" onclick="myIllu()">
+                Independent Projects<i class="fa-solid fa-chevron-down"></i></a>
+              <div class="illu-content-mobil" id="myIllu">
+              <a href="frontend.html">Kort&Godt</a>
+              <a href="Frontend-libary.html">Frontend Libary</a>
+              </div>
+            </div>
+          </div>
+          <a href="Contact.html" class="link">Contact</a> 
+          <a href="javascript:void(0);" class="icon-luk" onclick="myFunction()">
+            <i class="fa-solid fa-bars"></i></a>  
       </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa-solid fa-bars"></i></a>  
+        
+      </div> 
+        <div  id="main">
+          <button class="LightDark" onclick="myDarkmode()">
+            <i class="bi bi-brightness-high"></i> <i class="fa-solid fa-moon"></i>
+          </button>
+          <h1 class="titel">PORTFOLIO</h1>
+            <div class="banner">
+                <header>
+                  <h2> <span class="KeywordOne">Multimediadesigner</span> / <span class="KeywordTwo">Frontend</span> - Student </h2>
+                    <h3>Hi, I'm Sophia Kingston</h3>
+                 
+                   <h3>Based in <span class="KeywordOne">Copenhagen</span>, <span class="KeywordTwo">Denmark</span></h3>
+                   <h3 class="description">Proficient in following coding languages and technologies:</h3>
+                  
+                   <div class="toolsContainer">
+                    <div class="react">
+                      <span class="reactText"><p>React</p></span>
+                      <button><i class="fa-brands fa-react"></i></button>
+                    </div>
+                      <div class="bootstrap">
+                        <span class="bootstrapText"><p>Bootstrap</p></span>
+                      <button><i class="fa-brands fa-bootstrap"></i></button>
+                    </div>
 
-    </div>
-    <div id="pipperResult">
-    </div>
-    </div>
-    <script>
-      const beskedInput = document.getElementById('Besked');
-      const counter = document.getElementById('counter');
-      const maxLength = 255;
-  
-      // Update character count as the user types and enforce the limit
-      beskedInput.addEventListener('input', function() {
-        let characterCount = beskedInput.value.length;
-  
-        // Update the counter display
-        counter.textContent = 'Characters: ' + characterCount + '/' + maxLength;
-  
-        // Highlight the counter in red if the limit is reached
-        if (characterCount >= maxLength) {
-          counter.classList.add('over-limit');
-        } else {
-          counter.classList.remove('over-limit');
-        }
-      });
+                      <div class="wordpress">
+                        <span class="wordpressText"><p>Wordpress</p></span>
+                      <button><i class="fa-brands fa-wordpress"></i></button>
+                    </div>
+
+                      <div class="html">
+                        <span class="htmlText"><p>HTML</p></span>
+                      <button><i class="fa-brands fa-html5"></i></button>
+                    </div>
+
+                      <div class="css"><span class="cssText"><p>CSS</p></span>
+                        <button><i class="fa-brands fa-css3-alt"></i></button>
+                      </div>
+
+                      <div class="js"><span span class="jsText"><p>Javascript</p></span>
+                     <button><i class="fa-brands fa-js"></i></button>
+                      </div>
+                      <div class="github"><span class="githubText"><p>GitHub</p></span>
+                      <button><i class="fa-brands fa-github"></i></button>
+                    </div>
+                    <div class="mysql">
+                      <span class="mysqlText"><p>MySQL</p></span>
+                      <img src="img/sem-3-flow1/mysqlworkbench.webp" alt="">
+                    </div>
+                    </div>
+                </header>
+                <img src="img/portfolio.jpg" alt="">
+                <a href="#Portfolio"><i class="fa-solid fa-chevron-down"></i></a>
+            </div>
+            
+            <div id="Portfolio">
+              <h2 class="titel">My work/cases</h2>
+              <div id="myBtnContainer">
+                <button style="background-color: black;" class="btn active" onclick="filterSelection('all')"> Show all</button>
+                <button  class="btn" onclick="filterSelection('frontend')"> Frontend</button>
+                <button  class="btn" onclick="filterSelection('ux')">UX/UI</button>
+                <button  class="btn" onclick="filterSelection('content')"> Content Creation</button>
+            
+              </div>
+            
+              <div class="filter-container">
+                
+                  <div class="filterDiv ux show">
+                    <a href="kampagne.html">
+                    <div class="img-container">
+                      <h2 class="overlay-title">Campaign & InDesign</h2>
+                      <img src="img/sem-2-flow6/kampagne.png" alt="Picture of a boy swallowing a pill" style="margin-top: -67px;">
+                    </div>
+                    <!-- <div class="tags-container">
+                    <button>Poster</button>
+                     <button>Pamphlet</button>
+                     <button>Outdoorposter</button>
+                      <button> SoMe-Promo material</button>
+                      <button>E-Magazine.</button>
+                  </div> -->
+                  </a>
+                  </div>
+                
+            
+                  
+                  <div class="filterDiv frontend show">
+                    <a href="bootstrap.html">
+                    <div class="img-container">
+                      <h2 class="overlay-title">Flexbox, Grids & Bootstrap Wireframes</h2>
+                      <img src="img/sem-2-flow5/theMovieZone.png" alt="Picture of a website slideshow of science  fiction movies">
+                    </div>
+                    <!-- <div class="tags-container">
+                     <button>Responsive Wireframes</button> <button> Bootstrap</button> <button>CSS Grids & Flexbox</button><button> Green Web.</button> 
+                      </div> -->
+                      </a>
+                  </div>
+                      <div class="filterDiv frontend show ">
+                      <a href="wordpress.html">
+                      <div class="img-container">
+                        <h2 class="overlay-title">Wordpress & SEO</h2>
+                        <img src="img/sem-2-flow1/jane-doe-skoleprojekt.png" alt="Picture of a website for a ceremist">
+                      </div>
+                        <!-- <div class="tags-container">
+                        <button>SEO</button><button> PHP</button><button>User-manual</button><button>Wordpress</button><button>Elementor</button></p>
+                      </div> -->
+                      </a>
+                    </div>
+                  
+                  
+                    <div class="filterDiv frontend show">
+                      <a  class="kortOgGodt" href="frontend.html">
+                      <div class="img-container">
+                        <h2 class="overlay-title">Kort&Godt Website</h2>
+                        <img src="img/sem2-eksamen/kortOgGodt.png" alt="Website to learn about cardgames" >
+            
+                      </div>
+                        <!-- <div class="tags-container">
+                          <button>UX-Design</button><button>SEO</button><BUtton>Responsive Design</BUtton><button>Videoproduction</button>
+                        </div> -->
+                        </a>
+                    </div>
+                  
+                    <div class="filterDiv content show">
+                      <a class="visuel" href="visuel.html">
+                      <div class="img-container">
+                        <h2 class="overlay-title">Visual Conceptdevelopment</h2>
+                        <img src="img/sem-1-flow2/plakat.png" alt="Poster of a postapocalyptic wasteland at sunset" style="margin-top: -175px;">
+                        <!-- <div class="tags-container">
+                          <button>Thematic Colorwork</button><button>Illustrations</button><button>Sketchwork</button>
+                        </div> -->
+                      </div>
+                       </a>
+                    </div>
+                 
+                    
+                    <div class="filterDiv frontend show">
+                      <a class="frontend" href="frontend.html">
+                      <div class="img-container">
+                        <h2 class="overlay-title">Frontend Libary</h2>
+                        <img src="img/Baggrunds-billeder/markus-spiske-NsyU41QcsxM-unsplash.jpg" alt="Picture of code on a laptop">
+                      </div>
+                      <!-- <div class="tags-container">
+                          <button> CSS Animation</button><button>Wireframes</button><button>CSS Filtering</button>
+                      </div> -->
+                      </a>
+                    </div>
+                    <div class="filterDiv ux show">
+                      <a class="Billedbehandling" href="Billedbehandling.html">
+                      <div class="img-container">
+                        <h2 class="overlay-title"> Digital Image-Editing & Website-Prototyping</h2>
+                        <img  src="img/sem-1-flow1/prototype.png" alt="Picture of a Figma prototype promoting a festival">
+                        <!-- <div class="tags-container">
+                          <button>Website-Prototyping</button><button>Photoshop</button><button>Promotional Photographing</button>
+                        </div> -->
+                      </div>
+                      </a>
+                    </div>
+                    <div class="filterDiv frontend show">
+                      <a class="frontend" href="MobilApplikation.html">
+                      <div class="img-container">
+                        <h2 class="overlay-title">Mobile Application</h2>
+                        <video autoplay muted loop class="mobilApp">
+                          <source src="img/sem-3-flow1/mobil-app.mp4" type="video/mp4" >
+                        </video>
+                      </div>
+                      <!-- <div class="tags-container">
+                          <button> CSS Animation</button><button>Wireframes</button><button>CSS Filtering</button>
+                      </div> -->
+                      </a>
+                    </div>
+                    <div class="filterDiv frontend show">
+                      <a class="frontend" href="MySQL.html">
+                      <div class="img-container">
+                        <h2 class="overlay-title">MySQL</h2>
+                        <img class="mySQL" src="img/Baggrunds-billeder/Untitled-1.png" alt="Picture of code on a laptop">
+                      </div>
+                      <!-- <div class="tags-container">
+                          <button> CSS Animation</button><button>Wireframes</button><button>CSS Filtering</button>
+                      </div> -->
+                      </a>
+                    </div>
+                    
+              </div>
+              </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="flexcontainer">
+                <div class="flexbox">
+                    <h2>Contact</h2>
+                    <p>tlf. +45 50 59 11 08<p>
+                    <p>sophia.anina@gmail.com<p>
+                    <p><b> Business Academy</b><p>
+                    <p> Nørgaardsvej 30, 2800 Kongens Lyngby<p>
+                </div>
+                <!-- <div class="kontakt">
+                  <h2 class="info-titel">Contact me</h2>
+                    <form class="info" id="contact-form">
+                     
+                      <input type="hidden" name="contact_number" value="697483">
+                      <label>Name</label>
+                      <input id="sent1" type="text" name="from_name">
+                      <label>E-mail</label>
+                      <input id="sent2" type="email" name="reply_to">
+                      <label>Message</label>
+                      <textarea id="sent3" name="message"></textarea>
+                      <input id="submit" type="submit" value="Send">
+                      <div id="done">Thank you, for your email.</div>
+                      <div id="sending">Just a sec, we are sending your email
+                      </div>
+                    </form>
+                </div> -->
+            </div>
+        </div>
+    
+    <script src="script.js">
+        
     </script>
-  
-
-
-      <script src="script.js"></script>   
+   
 </body>
 </html>
-
